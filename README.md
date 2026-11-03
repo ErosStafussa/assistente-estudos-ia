@@ -1,95 +1,85 @@
 # Assistente de Estudos com IA
 
-Esse projeto é um assistente de estudos desenvolvido em Python. A ideia é permitir que o usuário faça perguntas e receba explicações usando inteligência artificial.
+Esse projeto foi desenvolvido para praticar Python, criação de APIs e integração com inteligência artificial.
 
-O projeto foi criado para praticar desenvolvimento Backend e integração com APIs de IA.
-
-## Funcionalidades
-
-- Fazer perguntas para a IA.
-- Receber respostas usando o Gemini.
-- Guardar o histórico da conversa.
-- Consultar mensagens anteriores.
-- Apagar o histórico.
-- Validar as perguntas enviadas.
-- Tratar erros na comunicação com a IA.
+A ideia é ter um assistente que consiga responder dúvidas, explicar assuntos e ajudar nos estudos.
 
 ## Tecnologias utilizadas
 
 - Python
 - FastAPI
-- Google Gemini API
-- Pydantic
+- Gemini API
+- Supabase
+- PostgreSQL
 - Pytest
-- HTTPX
+
+## Funcionalidades
+
+- Enviar perguntas para a IA.
+- Receber respostas sobre diferentes assuntos.
+- Consultar o histórico de conversas.
+- Salvar mensagens no banco de dados.
+- Limpar o histórico.
 
 ## Como executar
 
-1. Clone o repositório:
+Clone o repositório:
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/ErosStafussa/assistente-estudos-ia.git
 ```
 
-2. Entre na pasta do projeto:
+Entre na pasta:
 
 ```bash
 cd assistente-estudos-ia
 ```
 
-3. Crie e ative o ambiente virtual:
+Crie um ambiente virtual:
 
 ```bash
 python -m venv .venv
 ```
 
+Ative o ambiente no Windows:
+
 ```powershell
 .venv\Scripts\Activate.ps1
 ```
 
-4. Instale as dependências:
+Instale as dependências:
 
 ```bash
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-5. Crie um arquivo `.env` na pasta principal e adicione sua chave da Gemini:
+Crie um arquivo `.env` na raiz do projeto e adicione suas chaves:
 
 ```env
-GEMINI_API_KEY=sua_chave_aqui
+GEMINI_API_KEY=sua_chave
+SUPABASE_URL=sua_url
+SUPABASE_KEY=sua_chave
 ```
 
-6. Inicie o projeto:
+Inicie o servidor:
 
 ```bash
-python -m uvicorn app.main:app --reload
+uvicorn app.main:app --reload
 ```
 
-Acesse a documentação da API pelo endereço:
+Acesse a documentação da API:
 
 http://127.0.0.1:8000/docs
 
 ## Testes
 
-Para executar os testes automatizados:
+Para executar os testes:
 
 ```bash
 python -m pytest -v
 ```
 
-## Endpoints
-
-| Método | Rota | Função |
-|---|---|---|
-| GET | `/` | Verifica se a API está funcionando |
-| POST | `/chat` | Envia uma pergunta para a IA |
-| GET | `/historico` | Mostra o histórico |
-| DELETE | `/historico` | Apaga o histórico |
-
 ## Sobre o projeto
 
-Esse foi um dos meus projetos de estudo para aprofundar meus conhecimentos em Python e Backend.
+Esse é um dos meus projetos de estudo na área de desenvolvimento backend. Foi desenvolvido para colocar em prática conhecimentos de Python, APIs, banco de dados e inteligência artificial.
 
-Durante o desenvolvimento, pratiquei criação de APIs, integração com inteligência artificial, organização de código e testes automatizados.
-
-Ainda pretendo adicionar novas funcionalidades e conectar um banco de dados para armazenar as conversas.
